@@ -10,10 +10,10 @@ class Card extends Component {
     render() {
         return (
             <div className="card"> here is card 
-                <div className="poster"></div>
+                <div className="poster"><img class="posterImage" src={this.props.poster}/></div>
                    <div className="cardDescription">
-                        <p>Title</p>
-                        <p>rating</p>
+                        <p>Title: {this.props.title}</p>
+                        <p>Rating: {this.props.rating.toFixed(1)}</p>
                     </div>
             </div>
         )
