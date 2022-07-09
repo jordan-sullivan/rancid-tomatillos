@@ -9,7 +9,13 @@ class Card extends Component {
     
     render() {
         return (
-            <div style={{border: "1px solid green"}}> here is card </div>
+            <div className="card"> here is card 
+                <div className="poster">Poster here</div>
+                    <div className="cardDescription">
+                        <p>Title here</p>
+                        <p>Rating</p>
+                </div>
+            </div>
         )
     }
 }
