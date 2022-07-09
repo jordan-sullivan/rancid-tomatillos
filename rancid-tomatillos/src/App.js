@@ -1,6 +1,7 @@
 import './App.css';
 import React, {Component} from "react";
 import movieData from "./sample-data/movie-data.js"
+import Navbar from "./Components/Navbar/Navbar"
 
 class App extends Component {
   constructor() {
@@ -14,7 +15,7 @@ class App extends Component {
     return (
       <div>
         <Navbar />
-        <MovieContainer />
+        {/* <MovieContainer /> */}
       </div>
     )
   }
