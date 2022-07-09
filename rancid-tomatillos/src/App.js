@@ -8,19 +8,22 @@ class App extends Component {
   constructor() {
     super();
     this.state= {
-      allMovies: [movieData],
+      allMovies: movieData.movies,
     };
   }
 
+
+    
   render() {
     return (
       <div>
         <Navbar />
-        <CardContainer />
+        <CardContainer movies={this.state.allMovies}/>
       </div>
     )
   }
 }
+
 
 
 export default App;
