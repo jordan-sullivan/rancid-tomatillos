@@ -23,11 +23,16 @@ class App extends Component {
       console.log("ID", id);
     }
 
+  returnToMain = () => {
+    console.log("RTM firing")
+    this.setState({isClicked:false, selectedMovie: {}})
+  }
+
     
   render() {
   return (
        <div>
-          <Navbar />
+          <Navbar returnToMain={this.returnToMain}/>
         {this.state.isClicked ? <MovieView selectedMovie={this.state.selectedMovie} /> :
         <CardContainer movies={this.state.allMovies} handleClick={this.handleClick} />}
         </div>
