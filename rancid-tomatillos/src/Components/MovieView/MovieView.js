@@ -1,6 +1,6 @@
 import React from "react";
 import "./MovieView.css"
-//selectedMovie
+
 const MovieView = ({selectedMovie}) => {
 
     
