@@ -3,6 +3,7 @@ import "./MovieView.css"
 
 const MovieView = () => {
 
+     
 
     
     return(
