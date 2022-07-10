@@ -4,7 +4,7 @@ import React from "react";
 const Card = ({key, id, poster, rating, title, handleClick}) => {
 
         return (
-            <div className="card" role="button" onClick={handleClick}>
+            <div className="card" role="button" onClick={() => handleClick(id)}>
                 <div className="poster">
                     <img class="posterImage" src={poster}/>
                 </div>

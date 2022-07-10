@@ -5,6 +5,11 @@ import Card from "../Card/Card"
 
 const CardContainer = ({ movies, handleClick }) => {
 
+
+    const getSelectedMovie = () => {
+        
+    }
+
     const movieData = movies.map(movie => {
         return (
             <Card

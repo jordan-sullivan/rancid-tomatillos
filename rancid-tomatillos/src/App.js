@@ -10,17 +10,27 @@ class App extends Component {
     super();
     this.state= {
       allMovies: movieData.movies,
+      isClicked: false,
+      selectedMovie:{},
     };
   }
 
-  handleClick() {
+  handleClick = (id) => {
+    let selectedMovie = this.state.allMovies.find(movie => movie.id === id)
+    this.setState({selectedMovie: selectedMovie})
+    console.log("ID", id);
+}
 
-    console.log("handleClick function in APP");
     //hides main page
     //brings us to MV page
+    
+    // if id of what is clicked on matches id on data set, 
+    //then, display that id's data in MV
     //based on the id, ids need to match the data 
     //nav bar still available
-  }
+
+    //this.setState({isClicked})
+
 
     
   render() {
