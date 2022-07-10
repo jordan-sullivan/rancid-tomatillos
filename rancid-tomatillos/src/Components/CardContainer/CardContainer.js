@@ -1,25 +1,28 @@
 import './CardContainer.css';
-import React, {Component} from "react";
+import React from "react";
 import Card from "../Card/Card"
 
-class CardContainer extends Component {
-    constructor() {
-    super(); 
-    this.state = {};   
-    }
-    
-    render() {
+
+const CardContainer = ({ movies }) => {
+
+    const movieData = movies.map(movie => {
         return (
-            <div>
-                <h1>hi</h1>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-            </div>
+            <Card
+                key={movie.id}
+                poster={movie.poster_path}
+                title={movie.title}
+                rating={movie.average_rating}
+            />
         )
-    }
+    })
+
+    return (
+        
+        <div className="wrapper">
+            {movieData}
+        </div>
+    )
 }
+
 
 export default CardContainer;
