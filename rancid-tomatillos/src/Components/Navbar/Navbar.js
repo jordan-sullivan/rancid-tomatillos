@@ -1,11 +1,11 @@
 import './Navbar.css';
-import React, {Component} from "react";
+import React from "react";
 
-function Navbar() {
+function Navbar( {returnToMain} ) {
     return (
         <header style={{border: "5px solid blue"}}>
             <h1>Rancid Tomatillos</h1>
-            <button> Home </button>
+            <button onClick={returnToMain}> Home </button>
         </header>
     )
 }
