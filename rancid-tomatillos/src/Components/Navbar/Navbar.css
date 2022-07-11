@@ -4,3 +4,46 @@ header {
     justify-content: space-around;
     background-color:#414453ff;
 }
+
+button {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #f00606;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: rgb(250, 52, 3);
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+}
+
+
+button:hover {
+    transition: 1s ease-in-out;
+    background: #1B2238ff;
+}
+
+button:hover svg {
+    stroke-dashoffset: -480;
+}
+
+button span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
