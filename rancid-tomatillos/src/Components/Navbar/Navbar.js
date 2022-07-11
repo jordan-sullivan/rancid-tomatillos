@@ -5,6 +5,7 @@ function Navbar( {returnToMain} ) {
     return (
         <header style={{border: "5px solid blue"}}>
             <h1>Rancid Tomatillos</h1>
+            <div class="button-container">
             <div class="center">
                 <button onClick={returnToMain} class="btn">
                     <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
@@ -13,7 +14,8 @@ function Navbar( {returnToMain} ) {
                     </svg>
                     <span>HOME</span>
                 </button>
-            </div>   
+            </div> 
+            </div>  
         </header>
     )
 }
