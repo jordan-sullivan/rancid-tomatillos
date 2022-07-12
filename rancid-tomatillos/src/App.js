@@ -2,6 +2,7 @@ import './App.css';
 import React, {Component} from "react";
 import Navbar from "./Components/Navbar/Navbar"
 import CardContainer from "./Components/CardContainer/CardContainer"
+import Card from "./Components/Card/Card"
 import MovieView from "./Components/MovieView/MovieView"
 import { Route } from "react-router-dom"
 
@@ -54,7 +55,22 @@ class App extends Component {
           render= {() => 
           <CardContainer movies={this.state.allMovies} handleClick={this.handleClick} />}
         />
-        
+
+        <Route
+          exact path="/movies/:id"      
+          render={({match}) => {
+            const movieToRender = this.state.allMovies.find(movie => movie.id === parseInt(match.params.id));   
+            return <Card 
+              // key={movieToRender.key}
+              // id={movieToRender.id}
+              // poster={movieToRender.poster}
+            {...movieToRender} 
+            />
+          }}
+        />
+
+/*key, id, poster, rating, title, handleClick *\
+
         {/* {this.state.error && <h3>{this.state.error}</h3>}
         {!this.state.allMovies.length && !this.state.error && <h3>Loading...</h3>}
         {this.state.isClicked ? <MovieView selectedMovie={this.state.selectedMovie} /> :

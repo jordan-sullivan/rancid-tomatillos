@@ -22,11 +22,12 @@ const CardContainer = ({ movies, handleClick }) => {
     })
 
     return (
-            <div className="wrapper">
-                {movieData}
-            </div>
+        <div className="wrapper">
+            {movieData}
+        </div>
     )
 }
+
 
 ///movies/:movie_id
 
