@@ -2,5 +2,66 @@ header {
     display:flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     background-color:#414453ff;
+    height: 20%;
+    font-size: 30px;
+}
+
+h1 {
+	font-family: 'Syncopate', sans-serif;
+	font-size: 85px;
+	text-align: center;
+	position: relative;
+    font-weight: bold;
+    color: #14141a;
+    text-shadow: 0px 0px 5px #ffee34, 0px 0px 10px #ffee34, 0px 0px 10px #ffee34,
+    0px 0px 20px #ffee34;
+}
+
+button {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #f00606;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: rgb(250, 52, 3);
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+/* .button-container {
+
+} */
+
+.center {
+    width: 180px;
+    height: 60px;
+    position: absolute;
+}
+
+
+button:hover {
+    transition: 1s ease-in-out;
+    background: #1B2238ff;
+}
+
+button:hover svg {
+    stroke-dashoffset: -480;
+}
+
+button span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
 }
