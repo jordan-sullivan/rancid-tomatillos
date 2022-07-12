@@ -8,23 +8,19 @@
 
 .card:hover {
     cursor:pointer;
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
 }
 
 .poster {
     height: 80%;
-    width:80%;
-    /* Jordan CHANGE TO 100 for MAC */
+    width:100%;
 }
 
-
 .posterImage {
-    /* box-shadow: 0 0 12px 12px rgb(29, 22, 62) inset; */
     border: 1px solid #9FA0A4;
     height: 100%;
     width: 100%;
 }
-
 
 .allTitles{
     display:flex;
