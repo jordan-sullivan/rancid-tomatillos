@@ -52,21 +52,13 @@ svg {
     position: absolute;
 }
 
-button span {
+/* button span {
     color: #D6D6D6;
     font-family: 'Bebas Neue', cursive;
     font-size: 28px;
     font-weight: 100;
-}
+} */
 
-button:hover {
-    transition: 1s ease-in-out;
-    background: #232323;
-}
-
-button:hover svg {
-    stroke-dashoffset: -480;
-}
 
 /* CSS HEX
 --grey: #9FA0A4

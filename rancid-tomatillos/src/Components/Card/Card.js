@@ -9,8 +9,8 @@ const Card = ({key, id, poster, rating, title, handleClick}) => {
                     <img class="posterImage" src={poster}/>
                 </div>
                 <div className="cardDescription">
-                        <p>Title: {title}</p>
-                        <p>Rating: {rating.toFixed(1)}</p>
+                        <p className="allTitles">{title}</p>
+                        <p className="allRatings">{rating.toFixed(1)}</p>
                     </div>
             </div>
         )
