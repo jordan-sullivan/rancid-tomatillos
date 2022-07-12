@@ -1,22 +1,23 @@
 header {
-    display:flex;
+    display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    background-color:#414453ff;
-    height: 20%;
-    font-size: 30px;
+    background-color: #0B0B10ff;
+    height: 10%;
+    font-family: 'Bebas Neue', cursive;
 }
 
 h1 {
-	font-family: 'Syncopate', sans-serif;
-	font-size: 85px;
-	text-align: center;
-	position: relative;
+    margin: 1%;
+    font-size: 70px;
+    text-align: center;
+    position: relative;
     font-weight: bold;
-    color: #14141a;
-    text-shadow: 0px 0px 5px #ffee34, 0px 0px 10px #ffee34, 0px 0px 10px #ffee34,
-    0px 0px 20px #ffee34;
+    color: #14141A;
+    text-shadow: 0px 0px 5px #FFCA0Eff, 0px 0px 10px #FFCA0Eff, 0px 0px 10px #FFCA0Eff,
+        0px 0px 20px #FFCA0Eff;
+    padding-left: 20px;
 }
 
 button {
@@ -24,7 +25,7 @@ button {
     height: 60px;
     cursor: pointer;
     background: transparent;
-    border: 1px solid #f00606;
+    border: 3px solid #0B0B10ff;
     outline: none;
     transition: 1s ease-in-out;
 }
@@ -34,21 +35,47 @@ svg {
     left: 0;
     top: 0;
     fill: none;
-    stroke: rgb(250, 52, 3);
+    stroke: #FFCA0Eff;
     stroke-dasharray: 150 480;
     stroke-dashoffset: 150;
     transition: 1s ease-in-out;
 }
 
-/* .button-container {
-
-} */
+.button-container {
+    padding-right: 300px;
+    padding-bottom: 60px;
+}
 
 .center {
     width: 180px;
     height: 60px;
     position: absolute;
 }
+
+button span {
+    color: #D6D6D6;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 28px;
+    font-weight: 100;
+}
+
+button:hover {
+    transition: 1s ease-in-out;
+    background: #232323;
+}
+
+button:hover svg {
+    stroke-dashoffset: -480;
+}
+
+/* CSS HEX
+--grey: #9FA0A4
+--space-cadet-navy: #2C344Bff; lighter navy
+--sunglow: #FFCA0Eff; yellow
+--independence: #414453ff; grey navy
+--space-cadet-2: #1B2238ff; medium navy????
+--rich-black-fogra-39: #0B0B10ff; black
+--coquelicot/red: #FE3505ff; red */
 
 
 button:hover {

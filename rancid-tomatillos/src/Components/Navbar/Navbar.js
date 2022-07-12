@@ -3,7 +3,7 @@ import React from "react";
 
 function Navbar( {returnToMain} ) {
     return (
-        <header style={{border: "5px solid blue"}}>
+        <header>
             <h1>Rancid Tomatillos</h1>
             <div class="button-container">
             <div class="center">
