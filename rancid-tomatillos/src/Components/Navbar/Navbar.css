@@ -1,3 +1,12 @@
+/* CSS HEX
+--grey: #9FA0A4
+--space-cadet-navy: #2C344Bff; lighter navy
+--sunglow: #FFCA0Eff; yellow
+--independence: #414453ff; grey navy
+--space-cadet-2: #1B2238ff; medium navy????
+--rich-black-fogra-39: #0B0B10ff; black
+--coquelicot/red: #FE3505ff; red */
+
 header {
     display: flex;
     flex-direction: row;
@@ -55,40 +64,15 @@ svg {
 button span {
     color: #D6D6D6;
     font-family: 'Bebas Neue', cursive;
-    font-size: 28px;
-    font-weight: 100;
-}
-
-button:hover {
-    transition: 1s ease-in-out;
-    background: #232323;
-}
-
-button:hover svg {
-    stroke-dashoffset: -480;
-}
-
-/* CSS HEX
---grey: #9FA0A4
---space-cadet-navy: #2C344Bff; lighter navy
---sunglow: #FFCA0Eff; yellow
---independence: #414453ff; grey navy
---space-cadet-2: #1B2238ff; medium navy????
---rich-black-fogra-39: #0B0B10ff; black
---coquelicot/red: #FE3505ff; red */
-
-
-button:hover {
-    transition: 1s ease-in-out;
-    background: #1B2238ff;
-}
-
-button:hover svg {
-    stroke-dashoffset: -480;
-}
-
-button span {
-    color: white;
     font-size: 18px;
     font-weight: 100;
+}
+
+button:hover {
+    transition: 1s ease-in-out;
+    background: #0B0B10ff;
+}
+
+button:hover svg {
+    stroke-dashoffset: -480;
 }
