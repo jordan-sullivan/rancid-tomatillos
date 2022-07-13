@@ -25,7 +25,7 @@ class App extends Component {
     fetch("https://rancid-tomatillos.herokuapp.com/api/v2/movies")
     .then(response => response.json())
     .then(data => {
-      console.log("Data", data)
+      console.log("App Data", data)
       this.setState({allMovies: data.movies, loading: false})
     .catch(() =>
       this.setState({error: "There was an error loading your films. Please try again!"}) 
@@ -36,7 +36,7 @@ class App extends Component {
   handleClick = (id) => {
     let selectedMovie = this.state.allMovies.find(movie => movie.id === id)
     this.setState({selectedMovie: selectedMovie, isClicked: true})
-      console.log("SELECTED MOVIE", selectedMovie)
+      console.log("SELECTED MOVIE", selectedMovie.id)
       console.log("ID", id);
     }
 
@@ -57,19 +57,17 @@ class App extends Component {
         />
 
         <Route
-          exact path="/movies/:id"      
+          exact path="/:id"      
           render={({match}) => {
-            const movieToRender = this.state.allMovies.find(movie => movie.id === parseInt(match.params.id));   
-            return <Card 
-              // key={movieToRender.key}
-              // id={movieToRender.id}
-              // poster={movieToRender.poster}
-            {...movieToRender} 
+            // const movieToRender = this.state.allMovies.find(movie => movie.id === parseInt(match.params.id));   
+            return <MovieView id={match.params.id}
             />
           }}
         />
 
-/*key, id, poster, rating, title, handleClick *\
+        {/* //loop with id and url
+        //when does url update? */}
+
 
         {/* {this.state.error && <h3>{this.state.error}</h3>}
         {!this.state.allMovies.length && !this.state.error && <h3>Loading...</h3>}
