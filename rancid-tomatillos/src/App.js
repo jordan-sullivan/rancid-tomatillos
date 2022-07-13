@@ -36,16 +36,10 @@ class App extends Component {
       console.log("SELECTED MOVIE", selectedMovie.id)
     }
 
-  returnToMain = () => {
-    console.log("RTM firing")
-    this.setState({selectedMovie: {}})
-  }
-
-  
   render() {
   return (
       <div>
-        <Navbar returnToMain={this.returnToMain}/>
+        <Navbar />
         <Route
           exact path="/" 
           render= {() => 
