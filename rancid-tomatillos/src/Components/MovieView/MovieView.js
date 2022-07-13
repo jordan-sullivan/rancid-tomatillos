@@ -21,7 +21,6 @@ class MovieView extends Component{
     }
     
     render() {
-        console.log("props here", this.props)
         return(
             <div className="movieViewMain" style={{ backgroundImage: `url(${this.state.selectedMovieInfo.backdrop_path})` }}>
                 <div className="posterTitleContainer">
@@ -35,23 +34,17 @@ class MovieView extends Component{
                             <p className="runtime">Runtime: {this.state.selectedMovieInfo.runtime} mins.</p>
                             <p className="rating">{this.state.selectedMovieInfo.average_rating} ⭐️</p>
                             <div className="genresHolder">
-                                <p className="genres"></p>
-                                <p className="genres"></p>
-                                <p className="genres"></p>
+                                <p className="genres">{this.state.selectedMovieInfo.genres}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             <footer>
-                <p className="overview">Overview </p>
+                <p className="overview">{this.state.selectedMovieInfo.overview}</p>
             </footer>
         </div>
         )
     }
 } 
 
-
 export default MovieView
-
-//should this be a class?
-//second fetch call?

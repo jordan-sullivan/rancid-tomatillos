@@ -28,7 +28,4 @@ const CardContainer = ({ movies, handleClick }) => {
     )
 }
 
-
-///movies/:movie_id
-
 export default CardContainer;
