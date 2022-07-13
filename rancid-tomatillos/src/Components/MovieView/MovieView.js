@@ -1,35 +1,57 @@
-import React from "react";
+import React, {Component} from "react";
 import "./MovieView.css"
 
-const MovieView = ({selectedMovie}) => {
 
+class MovieView extends Component{
+    constructor(props) {
+        super(props);
+        this.state= {
+            selectedMovieInfo: {},
+        };
+    }
 
-    return(
-        <div className="movieViewMain" style={{ backgroundImage: `url(${selectedMovie.backdrop_path})` }}>
-            <div className="posterTitleContainer">
-                <div className="floater">
-                    <div className="statsContainer">
-                        <h2 className="title">{selectedMovie.title}</h2>
-                        <p className="tagline">Tagline: ld hsdh kj sf dsfsfsf hkds"{selectedMovie.tagline}</p>
-                        <p className="releaseDate">Released: {selectedMovie.release_date}</p>
-                        <p className="budget">Budget: $500,000 {selectedMovie.budget}</p>
-                        <p className="revenue">Revenue: $50,000 {selectedMovie.revenue}</p>
-                        <p className="runtime">Runtime: 50 {selectedMovie.runtime} mins.</p>
-                        <p className="rating">{selectedMovie.average_rating.toFixed(1)} ⭐️</p>
-                        <div className="genresHolder">
-                            <p className="genres">"Drama"</p>
-                            <p className="genres">"Comedy"</p>
-                            <p className="genres">"Thriller"</p>
+    componentDidMount() {
+        fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
+        .then(response => response.json())
+        .then(data => {
+            this.setState({
+                selectedMovieInfo: data.movie,
+            })
+        })
+    }
+    
+    render() {
+        console.log("props here", this.props)
+        return(
+            <div className="movieViewMain" style={{ backgroundImage: `url(${this.state.selectedMovieInfo.backdrop_path})` }}>
+                <div className="posterTitleContainer">
+                    <div className="floater">
+                        <div className="statsContainer">
+                            <h2 className="title">{this.state.selectedMovieInfo.title}</h2>
+                            <p className="tagline">Tagline: {this.state.selectedMovieInfo.tagline}</p>
+                            <p className="releaseDate">Released: {this.state.selectedMovieInfo.release_date}</p>
+                            <p className="budget">Budget: {this.state.selectedMovieInfo.budget}</p>
+                            <p className="revenue">Revenue: {this.state.selectedMovieInfo.revenue}</p>
+                            <p className="runtime">Runtime: {this.state.selectedMovieInfo.runtime} mins.</p>
+                            <p className="rating">{this.state.selectedMovieInfo.average_rating} ⭐️</p>
+                            <div className="genresHolder">
+                                <p className="genres"></p>
+                                <p className="genres"></p>
+                                <p className="genres"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        <footer>
-            <p className="overview">Overviewjknjk dhkgkdjgh kdgh kdhg kg kjdfhg dkh gk gwo gko flsl osf sls fkos  
-            lsh lg sh fls osf lsfhjksfhkdhsf oishf ks o dlsh os disfh o sfs aefo  lshf </p>
-        </footer>
-    </div>
-)
-}
+            <footer>
+                <p className="overview">Overview </p>
+            </footer>
+        </div>
+        )
+    }
+} 
+
 
 export default MovieView
+
+//should this be a class?
+//second fetch call?
