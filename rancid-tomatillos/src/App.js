@@ -24,9 +24,9 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({allMovies: data.movies, loading: false})
-      .catch(() =>
-        this.setState({error: "There was an error loading your films. Please try again!"}) 
-        )
+      // .catch(() =>
+      //   this.setState({error: "There was an error loading your films. Please try again!"}) 
+      //   )
     })
   }
 
