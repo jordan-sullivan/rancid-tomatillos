@@ -22,7 +22,8 @@ class MovieView extends Component{
     
     render() {
         return(
-            <div className="movieViewMain" style={{ backgroundImage: `url(${this.state.selectedMovieInfo.backdrop_path})` }}>
+            <div className="movieViewMain" src={this.state.selectedMovieInfo.backdrop_path} 
+                                        style={{ backgroundImage: `url(${this.state.selectedMovieInfo.backdrop_path})` }}>
                 <div className="posterTitleContainer">
                     <div className="floater">
                         <div className="statsContainer">

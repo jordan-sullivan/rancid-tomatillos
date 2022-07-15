@@ -8,6 +8,7 @@ const CardContainer = ({ movies, handleClick }) => {
 
     const movieData = movies.map(movie => {
         return (
+            <div className="cardContainer">
             <Link to={`/${movie.id}`}>
                 <Card
                     key={movie.id}
@@ -18,6 +19,7 @@ const CardContainer = ({ movies, handleClick }) => {
                     handleClick={handleClick}
                 />
             </Link>
+            </div>
         )
     })
 
