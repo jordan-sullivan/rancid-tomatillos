@@ -51,10 +51,9 @@ class MovieView extends Component{
             <div className="movieViewMain" src={film.backdrop_path} 
                                         style={{ backgroundImage: `url(${film.backdrop_path})` }}>
                 <div className="posterTitleContainer">
-                    <div className="floater">
                         <div className="statsContainer">
                             <h2 className="title">{film.title}</h2>
-                            <p className="tagline">Tagline: {film.tagline}</p>
+                            <p className="tagline">{film.tagline}</p>
                             <p className="releaseDate">Released: {this.formatDate()}</p>
                             <p className="budget">Budget: {this.translateToCurrency(film.budget)}</p>
                             <p className="revenue">Revenue: {this.translateToCurrency(film.revenue)}</p>
@@ -64,7 +63,6 @@ class MovieView extends Component{
                                 <p className="genres">{this.formatGenres()}</p>
                             </div>
                         </div>
-                    </div>
                 </div>
             <footer>
                 <p className="overview">{this.state.selectedMovieInfo.overview}</p>
