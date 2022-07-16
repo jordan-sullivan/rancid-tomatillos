@@ -3,6 +3,13 @@ describe('MovieView Test Suite', () => {
     cy.visit("http://localhost:3000/508439")
   })
 
+  it("should display an error message for a 500 status code", () => {
+    cy
+    .intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies/508439", {statusCode:500} )
+    .visit("http://localhost:3000/508439")
+    .contains("There was an error loading your film. Please try again!")
+  })
+
   it("should be able to visit the app and display the Navbar and its contents", () => {
     cy
       .get("header")
