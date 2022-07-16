@@ -25,6 +25,7 @@ describe('MovieView Test Suite', () => {
       .get(".overview").contains("In a suburban fantasy world, two teenage elf brothers embark on an extraordinary quest to discover if there is still a little magic left out there.")
   });
 
+
   it("Should not be able to see any other movies", () => {
     cy.get(".movieViewMain").should("be.visible")
     cy.get(".cardContainer").should("not.exist")

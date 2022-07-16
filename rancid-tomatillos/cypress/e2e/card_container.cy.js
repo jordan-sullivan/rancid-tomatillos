@@ -10,10 +10,7 @@ describe('CardContainer Test Suite', () => {
   it("should display an error message for a 500 status code", () => {
 
     cy
-    .intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", 
-    {statusCode:500,
-      error: "THIS IS A TEST ERROR!!!!!!!!!!!"
-    } )
+    .intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", {statusCode:500} )
     .visit("http://localhost:3000/")
     .contains("There was an error loading your films. Please try again!")
   })
