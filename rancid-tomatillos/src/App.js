@@ -24,10 +24,10 @@ class App extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({allMovies: data.movies, loading: false})
-      // .catch(() =>
-      //   this.setState({error: "There was an error loading your films. Please try again!"}) 
-      //   )
-    })
+      })
+      .catch(() =>
+        this.setState({error: "There was an error loading your films. Please try again!"}) 
+        )
   }
 
   handleClick = (id) => {
@@ -37,24 +37,31 @@ class App extends Component {
     }
 
   render() {
-  return (
-      <div>
-        <Navbar />
-        <Route
-          exact path="/" 
-          render= {() => 
-          <CardContainer movies={this.state.allMovies} handleClick={this.handleClick} />}
-        />
-        <Route
-          exact path="/:id"      
-          render={({match}) => {   
-            return <MovieView id={match.params.id}/>
-          }}
-        />
-      </div>
-    )
-  }
+    return (
+          <div>
+              <Navbar />
+              <Route
+                exact path="/" 
+                render= {() =>
+                  <div className="error">
+                    <div style={{display: this.state.error ? "block" : "none"}}> {this.state.error} </div> 
+                    <CardContainer movies={this.state.allMovies} handleClick={this.handleClick} />
+                  </div>
+                }
+              />
+              
+            <Route
+              exact path="/:id"      
+              render={({match}) => {   
+                return <MovieView id={match.params.id}/>
+              }}
+            />
+          </div>
+        )
+      }
 }
+
+
 
 
 export default App;
