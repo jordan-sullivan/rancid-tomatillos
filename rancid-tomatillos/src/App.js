@@ -43,7 +43,7 @@ class App extends Component {
               <Route
                 exact path="/" 
                 render= {() =>
-                  <div className="error">
+                  <div className="cardContainerError">
                     <div style={{display: this.state.error ? "block" : "none"}}> {this.state.error} </div> 
                     <CardContainer movies={this.state.allMovies} handleClick={this.handleClick} />
                   </div>
@@ -51,9 +51,14 @@ class App extends Component {
               />
               
             <Route
-              exact path="/:id"      
-              render={({match}) => {   
-                return <MovieView id={match.params.id}/>
+              exact path="/:id" 
+              render={({match}) => {
+                return(
+                <div>
+                  <div style={{display: this.state.error ? "block" : "none"}}> YO </div>   
+                  <MovieView id={match.params.id}/>
+                </div>
+                ) 
               }}
             />
           </div>

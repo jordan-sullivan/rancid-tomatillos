@@ -7,6 +7,7 @@ class MovieView extends Component{
         super(props);
         this.state= {
             selectedMovieInfo: {},
+            error: "",
         };
     }
 
@@ -18,10 +19,15 @@ class MovieView extends Component{
                 selectedMovieInfo: data.movie,
             })
         })
+        .catch(() =>
+        this.setState({error: "There was an error loading your film. Please try again!"}) 
+        )
     }
     
     render() {
         return(
+            <div className="movieViewError">
+            <div style={{display: this.state.error ? "block" : "none"}}> {this.state.error} </div>
             <div className="movieViewMain" src={this.state.selectedMovieInfo.backdrop_path} 
                                         style={{ backgroundImage: `url(${this.state.selectedMovieInfo.backdrop_path})` }}>
                 <div className="posterTitleContainer">
@@ -43,6 +49,7 @@ class MovieView extends Component{
             <footer>
                 <p className="overview">{this.state.selectedMovieInfo.overview}</p>
             </footer>
+        </div>
         </div>
         )
     }
