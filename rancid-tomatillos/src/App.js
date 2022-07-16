@@ -26,8 +26,7 @@ class App extends Component {
         this.setState({allMovies: data.movies, loading: false})
       })
       .catch(() =>
-        this.setState({error: "There was an error loading your films. Please try again!"}) 
-        )
+        this.setState({error: "There was an error loading your films. Please try again!"}))
   }
 
   handleClick = (id) => {
@@ -65,8 +64,5 @@ class App extends Component {
         )
       }
 }
-
-
-
 
 export default App;
