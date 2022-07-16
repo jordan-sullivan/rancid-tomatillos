@@ -63,6 +63,10 @@ p {
     flex-direction: row;
 }
 
+.genres {
+    padding: 5px;
+}
+
 footer {
     color: antiquewhite;
     background-color: #0B0B10ff;

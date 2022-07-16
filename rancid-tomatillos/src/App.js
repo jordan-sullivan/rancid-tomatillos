@@ -11,6 +11,7 @@ class App extends Component {
     this.state= {
       allMovies: [],
       selectedMovie: {},
+      rating:0,
       error: "",
       loading: false,
       }
@@ -31,8 +32,9 @@ class App extends Component {
 
   handleClick = (id) => {
     let selectedMovie = this.state.allMovies.find(movie => movie.id === id)
-    this.setState({selectedMovie: selectedMovie})
-      console.log("SELECTED MOVIE", selectedMovie.id)
+    this.setState({selectedMovie: selectedMovie, rating: selectedMovie.average_rating})
+
+      console.log("SELECTED MOVIE", selectedMovie.average_rating)
     }
 
   render() {
@@ -55,7 +57,7 @@ class App extends Component {
                 return(
                 <div>
                   <div style={{display: this.state.error ? "block" : "none"}}> YO </div>   
-                  <MovieView id={match.params.id}/>
+                  <MovieView id={match.params.id} rating={this.state.rating}/>
                 </div>
                 ) 
               }}

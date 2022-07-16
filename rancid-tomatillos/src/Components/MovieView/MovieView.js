@@ -13,7 +13,7 @@ class MovieView extends Component{
 
     formatDate() {
         let testRelease = this.state.selectedMovieInfo.release_date
-        return new Date(testRelease).toLocaleString().split(' ')[0]
+        return `Released: ${new Date(testRelease).toLocaleString().split(' ')[0]}`
     }
 
     formatGenres() {
@@ -21,7 +21,9 @@ class MovieView extends Component{
     }
 
     translateToCurrency(number) {
-        return `$${new Intl.NumberFormat().format(number)}`;
+        if(number >1){
+            return `$${new Intl.NumberFormat().format(number)}`;
+        }
     }
 
     formatRuntime() {
@@ -45,6 +47,7 @@ class MovieView extends Component{
     
     render() {
         let film = this.state.selectedMovieInfo;
+     
         return(
             <div className="movieViewError">
             <div style={{display: this.state.error ? "block" : "none"}}> {this.state.error} </div>
@@ -54,14 +57,14 @@ class MovieView extends Component{
                         <div className="statsContainer">
                             <h2 className="title">{film.title}</h2>
                             <p className="tagline">{film.tagline}</p>
-                            <p className="releaseDate">Released: {this.formatDate()}</p>
-                            <p className="budget">Budget: {this.translateToCurrency(film.budget)}</p>
-                            <p className="revenue">Revenue: {this.translateToCurrency(film.revenue)}</p>
-                            <p className="runtime">Runtime: {this.formatRuntime()}</p>
-                            <p className="rating">{film.average_rating} ⭐️</p>
-                            <div className="genresHolder">
-                                <p className="genres">{this.formatGenres()}</p>
-                            </div>
+                            <p className="releaseDate">{this.formatDate()}</p>
+                            {film.budget && <p className="budget">Budget: {this.translateToCurrency(film.budget)}</p>}
+                            {film.revenue && <p className="revenue">Revenue: {this.translateToCurrency(film.revenue)}</p>}
+                            {film.runtime && <p className="runtime">Runtime: {this.formatRuntime()}</p>}
+                            <p className="rating">{this.props.rating.toFixed(1)} ⭐️</p>
+                            {film.title !== "Maratón After" && <div className="genresHolder">
+                              <p className="genres"> {this.formatGenres()}</p>
+                            </div>}
                         </div>
                 </div>
             <footer>
