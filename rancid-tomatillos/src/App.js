@@ -11,7 +11,7 @@ class App extends Component {
     this.state= {
       allMovies: [],
       selectedMovie: null,
-      rating:0,
+      // rating:0,
       error: "",
       loading: false,
       }
@@ -33,9 +33,11 @@ class App extends Component {
 
   handleClick = (id) => {
     let selectedMovie = this.state.allMovies.find(movie => movie.id === id)
-    this.setState({selectedMovie: selectedMovie, rating: selectedMovie.average_rating})
-      console.log("SELECTED MOVIE", selectedMovie.average_genres)
+    this.setState({selectedMovie: selectedMovie})
+      console.log("SELECTED MOVIE", selectedMovie)
     }
+
+
 
   //   getGenres() {
   //     let noDups = []
