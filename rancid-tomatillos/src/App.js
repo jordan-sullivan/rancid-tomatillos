@@ -10,13 +10,13 @@ class App extends Component {
     super();
     this.state= {
       allMovies: [],
-      selectedMovie: {},
+      selectedMovie: null,
       rating:0,
       error: "",
       loading: false,
       }
     };
-  
+
   componentDidMount() {
     this.setState({
       loading: true,
@@ -27,20 +27,33 @@ class App extends Component {
         this.setState({allMovies: data.movies, loading: false})
       })
       .catch(() =>
-        this.setState({error: "There was an error loading your films. Please try again!"}))
-  }
+      this.setState({error: "There was an error loading your films. Please try again!"}))
+    }
+    
 
   handleClick = (id) => {
     let selectedMovie = this.state.allMovies.find(movie => movie.id === id)
     this.setState({selectedMovie: selectedMovie, rating: selectedMovie.average_rating})
-
-      console.log("SELECTED MOVIE", selectedMovie.average_rating)
+      console.log("SELECTED MOVIE", selectedMovie.average_genres)
     }
 
+  //   getGenres() {
+  //     let noDups = []
+  //   this.state.allMovies.forEach((movie => {
+  //     movie.genres.forEach((gen => {
+  //       if (!gen) {
+  //         noDups.push(gen)
+  //       }
+  //     }))
+  //   }))
+  //   console.log("NO DUPPPPSS", noDups)
+  //   return noDups
+  // }
+  
   render() {
     return (
-          <div>
-              <Navbar />
+      <div>
+              <Navbar getGenres={this.getGenres}/>
               <Route
                 exact path="/" 
                 render= {() =>
@@ -56,7 +69,7 @@ class App extends Component {
               render={({match}) => {
                 return(
                 <div>
-                  <div style={{display: this.state.error ? "block" : "none"}}> YO </div>   
+                  <div style={{display: this.state.error ? "block" : "none"}}> YO </div>  
                   <MovieView id={match.params.id} rating={this.state.rating}/>
                 </div>
                 ) 

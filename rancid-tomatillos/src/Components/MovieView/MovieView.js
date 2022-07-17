@@ -37,17 +37,16 @@ class MovieView extends Component{
         .then(response => response.json())
         .then(data => {
             this.setState({
-                selectedMovieInfo: data.movie,
+                selectedMovieInfo: data.movie
             })
         })
         .catch(() =>
         this.setState({error: "There was an error loading your film. Please try again!"}) 
         )
     }
-    
+
     render() {
         let film = this.state.selectedMovieInfo;
-     
         return(
             <div className="movieViewError">
             <div style={{display: this.state.error ? "block" : "none"}}> {this.state.error} </div>
