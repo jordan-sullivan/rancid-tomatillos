@@ -61,7 +61,7 @@ class MovieView extends Component{
                             {film.budget && <p className="budget">Budget: {this.translateToCurrency(film.budget)}</p>}
                             {film.revenue && <p className="revenue">Revenue: {this.translateToCurrency(film.revenue)}</p>}
                             {film.runtime && <p className="runtime">Runtime: {this.formatRuntime()}</p>}
-                            <p className="rating">{this.state.selectedMovieRating.toFixed(1)} ⭐️</p>
+                            <p className="rating"> ⭐️ {this.state.selectedMovieRating.toFixed(1)} </p>
                             {film.title !== "Maratón After" && <div className="genresHolder">
                               <p className="genres"> {this.formatGenres()}</p>
                             </div>}

@@ -40,7 +40,11 @@ class App extends Component {
     // console.log("TEST FOR SORT BY RATING")
     // console.log("ALL MOVIES", this.state.allMovies)
     let sorted = this.state.allMovies.sort((a, b) => {
+      if (this.state.allMovies[0].average_rating < 7) {
       return b.average_rating - a.average_rating;
+  } else {
+    return a.average_rating - b.average_rating;
+  }
   })
 
   this.setState({allMovies: sorted})

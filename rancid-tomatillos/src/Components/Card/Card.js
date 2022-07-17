@@ -10,7 +10,7 @@ const Card = ({key, id, poster, rating, title, handleClick}) => {
                 </div>
                 <div className="cardDescription">
                         <p className="allTitles">{title}</p>
-                        <p className="allRatings">{rating.toFixed(1)}</p>
+                        <p className="allRatings"> ⭐️ {rating.toFixed(1)} </p>
                     </div>
             </div>
         )
