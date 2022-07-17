@@ -33,17 +33,31 @@ class App extends Component {
   handleClick = (id) => {
     let selectedMovie = this.state.allMovies.find(movie => movie.id === id)
     this.setState({selectedMovie: selectedMovie})
-      console.log("SELECTED MOVIE", selectedMovie)
+      console.log("SELECTED MOVIE", selectedMovie.average_rating)
     }
+
+  sortByRating= () => {
+    // console.log("TEST FOR SORT BY RATING")
+    // console.log("ALL MOVIES", this.state.allMovies)
+    let sorted = this.state.allMovies.sort((a, b) => {
+      return b.average_rating - a.average_rating;
+  })
+
+  this.setState({allMovies: sorted})
+
+  // console.log("SORTED", sorted)
+  // return sorted;
+}
 
   render() {
     return (
       <div>
-              <Navbar />
+        <Navbar sortByRating={this.sortByRating}/>
               <Route
                 exact path="/" 
                 render= {() =>
                   <div className="cardContainerError">
+                    {/* <Navbar sortByRating={this.sortByRating}/> */}
                     <div style={{display: this.state.error ? "block" : "none"}}> {this.state.error} </div> 
                     <CardContainer movies={this.state.allMovies} handleClick={this.handleClick} />
                   </div>
@@ -55,7 +69,8 @@ class App extends Component {
               render={({match}) => {
                 return(
                 <div>
-                  <div style={{display: this.state.error ? "block" : "none"}}> YO </div>  
+                  {/* <Navbar sortByRating={this.sortByRating}/> */}
+                  <div style={{display: this.state.error ? "block" : "none"}}> </div>  
                   <MovieView id={match.params.id} rating={this.state.rating}/>
                 </div>
                 ) 
