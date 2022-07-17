@@ -11,7 +11,6 @@ class App extends Component {
     this.state= {
       allMovies: [],
       selectedMovie: null,
-      // rating:0,
       error: "",
       loading: false,
       }
@@ -37,25 +36,10 @@ class App extends Component {
       console.log("SELECTED MOVIE", selectedMovie)
     }
 
-
-
-  //   getGenres() {
-  //     let noDups = []
-  //   this.state.allMovies.forEach((movie => {
-  //     movie.genres.forEach((gen => {
-  //       if (!gen) {
-  //         noDups.push(gen)
-  //       }
-  //     }))
-  //   }))
-  //   console.log("NO DUPPPPSS", noDups)
-  //   return noDups
-  // }
-  
   render() {
     return (
       <div>
-              <Navbar getGenres={this.getGenres}/>
+              <Navbar />
               <Route
                 exact path="/" 
                 render= {() =>
