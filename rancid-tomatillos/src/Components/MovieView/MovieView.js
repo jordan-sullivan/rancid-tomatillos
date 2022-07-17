@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import "./MovieView.css"
 
-
 class MovieView extends Component{
     constructor(props) {
         super(props);
@@ -22,7 +21,7 @@ class MovieView extends Component{
     }
 
     translateToCurrency(number) {
-        if(number >1){
+        if(number > 1){
             return `$${new Intl.NumberFormat().format(number)}`;
         }
     }
@@ -37,9 +36,7 @@ class MovieView extends Component{
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
         .then(response => response.json())
         .then(data => {
-            this.setState({
-                selectedMovieInfo: data.movie, selectedMovieRating: data.movie.average_rating,
-            })
+            this.setState({selectedMovieInfo: data.movie, selectedMovieRating: data.movie.average_rating})
         })
         .catch(() =>
         this.setState({error: "There was an error loading your film. Please try again!"}) 
@@ -51,8 +48,7 @@ class MovieView extends Component{
         return(
             <div className="movieViewError">
             <div style={{display: this.state.error ? "block" : "none"}}> {this.state.error} </div>
-            <div className="movieViewMain" src={film.backdrop_path} 
-                                        style={{ backgroundImage: `url(${film.backdrop_path})` }}>
+            <div className="movieViewMain" src={film.backdrop_path} style={{ backgroundImage: `url(${film.backdrop_path})` }}>
                 <div className="posterTitleContainer">
                         <div className="statsContainer">
                             <h2 className="title">{film.title}</h2>
@@ -63,7 +59,7 @@ class MovieView extends Component{
                             {film.runtime && <p className="runtime">Runtime: {this.formatRuntime()}</p>}
                             <p className="rating"> ⭐️ {this.state.selectedMovieRating.toFixed(1)} </p>
                             {film.title !== "Maratón After" && <div className="genresHolder">
-                              <p className="genres"> {this.formatGenres()}</p>
+                            <p className="genres"> {this.formatGenres()}</p>
                             </div>}
                         </div>
                 </div>

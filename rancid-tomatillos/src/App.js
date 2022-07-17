@@ -37,8 +37,6 @@ class App extends Component {
     }
 
   sortByRating= () => {
-    // console.log("TEST FOR SORT BY RATING")
-    // console.log("ALL MOVIES", this.state.allMovies)
     let sorted = this.state.allMovies.sort((a, b) => {
       if (this.state.allMovies[0].average_rating < 7) {
       return b.average_rating - a.average_rating;
@@ -48,9 +46,6 @@ class App extends Component {
   })
 
   this.setState({allMovies: sorted})
-
-  // console.log("SORTED", sorted)
-  // return sorted;
 }
 
   render() {
@@ -61,7 +56,6 @@ class App extends Component {
                 exact path="/" 
                 render= {() =>
                   <div className="cardContainerError">
-                    {/* <Navbar sortByRating={this.sortByRating}/> */}
                     <div style={{display: this.state.error ? "block" : "none"}}> {this.state.error} </div> 
                     <CardContainer movies={this.state.allMovies} handleClick={this.handleClick} />
                   </div>
@@ -73,7 +67,6 @@ class App extends Component {
               render={({match}) => {
                 return(
                 <div>
-                  {/* <Navbar sortByRating={this.sortByRating}/> */}
                   <div style={{display: this.state.error ? "block" : "none"}}> </div>  
                   <MovieView id={match.params.id} rating={this.state.rating}/>
                 </div>
