@@ -7,6 +7,7 @@ class MovieView extends Component{
         super(props);
         this.state= {
             selectedMovieInfo: {},
+            selectedMovieRating: 0,
             error: "",
         };
     }
@@ -37,7 +38,7 @@ class MovieView extends Component{
         .then(response => response.json())
         .then(data => {
             this.setState({
-                selectedMovieInfo: data.movie
+                selectedMovieInfo: data.movie, selectedMovieRating: data.movie.average_rating,
             })
         })
         .catch(() =>
@@ -60,7 +61,7 @@ class MovieView extends Component{
                             {film.budget && <p className="budget">Budget: {this.translateToCurrency(film.budget)}</p>}
                             {film.revenue && <p className="revenue">Revenue: {this.translateToCurrency(film.revenue)}</p>}
                             {film.runtime && <p className="runtime">Runtime: {this.formatRuntime()}</p>}
-                            <p className="rating">{this.props.rating.toFixed(1)} ⭐️</p>
+                            <p className="rating">{this.state.selectedMovieRating.toFixed(1)} ⭐️</p>
                             {film.title !== "Maratón After" && <div className="genresHolder">
                               <p className="genres"> {this.formatGenres()}</p>
                             </div>}
