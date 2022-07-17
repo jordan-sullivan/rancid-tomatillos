@@ -11,7 +11,6 @@ class App extends Component {
     this.state= {
       allMovies: [],
       selectedMovie: null,
-      // rating:0,
       error: "",
       loading: false,
       }
@@ -34,28 +33,25 @@ class App extends Component {
   handleClick = (id) => {
     let selectedMovie = this.state.allMovies.find(movie => movie.id === id)
     this.setState({selectedMovie: selectedMovie})
-      console.log("SELECTED MOVIE", selectedMovie)
+      console.log("SELECTED MOVIE", selectedMovie.average_rating)
     }
 
+  sortByRating= () => {
+    let sorted = this.state.allMovies.sort((a, b) => {
+      if (this.state.allMovies[0].average_rating < 7) {
+      return b.average_rating - a.average_rating;
+  } else {
+    return a.average_rating - b.average_rating;
+  }
+  })
 
+  this.setState({allMovies: sorted})
+}
 
-  //   getGenres() {
-  //     let noDups = []
-  //   this.state.allMovies.forEach((movie => {
-  //     movie.genres.forEach((gen => {
-  //       if (!gen) {
-  //         noDups.push(gen)
-  //       }
-  //     }))
-  //   }))
-  //   console.log("NO DUPPPPSS", noDups)
-  //   return noDups
-  // }
-  
   render() {
     return (
       <div>
-              <Navbar getGenres={this.getGenres}/>
+        <Navbar sortByRating={this.sortByRating}/>
               <Route
                 exact path="/" 
                 render= {() =>
@@ -71,7 +67,7 @@ class App extends Component {
               render={({match}) => {
                 return(
                 <div>
-                  <div style={{display: this.state.error ? "block" : "none"}}> YO </div>  
+                  <div style={{display: this.state.error ? "block" : "none"}}> </div>  
                   <MovieView id={match.params.id} rating={this.state.rating}/>
                 </div>
                 ) 
