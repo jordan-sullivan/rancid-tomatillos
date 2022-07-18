@@ -1,17 +1,21 @@
 * {
     text-decoration: none;
+    caret-color: transparent;
+
 }
+
 
 html {
-    height: 100%;
-    background-image: linear-gradient(
-      to bottom right,
-      rgb(0, 0, 0),
-      rgb(0, 0, 0)
+  height: 100%;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(0, 0, 0),
+    rgb(0, 0, 0)
     );
   }
-
-.error {
+  
+  .error {
     border: solid 1px black
-}
-
+  }
+  
+  
