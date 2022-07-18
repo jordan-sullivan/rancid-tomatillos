@@ -50,7 +50,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
         <Navbar sortByRating={this.sortByRating}/>
               <Route
                 exact path="/" 

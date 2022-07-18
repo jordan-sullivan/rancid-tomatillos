@@ -1,12 +1,14 @@
 .movieViewMain {
-    height: 100%;
-    width: 100%;
-    background-repeat: no-repeat;
+    width:100vw;
+    /* height: 890px; */
+    height: 90%;
     background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Rajdhani', sans-serif;
     overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 0;
 }
-
 
 .posterTitleContainer {
     display: flex;
@@ -27,11 +29,12 @@
     justify-content: center;
     max-width: 300px;
     margin-right: 5%;
-    margin-top: 3%;
-    margin-bottom: 2%;
+    margin-top: 4%;
+    margin-bottom: 3%;
     min-width: 300px;
     opacity: 0.8;
-    padding: 20px 15px 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     text-align: center;
     width: 30%;
 }
@@ -57,7 +60,6 @@ p {
 }
 
 .genresHolder {
-    border: 2px solid white;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -65,14 +67,17 @@ p {
 
 .genres {
     padding: 5px;
+    color: #41AAD1;
 }
 
 footer {
     color: antiquewhite;
     background-color: #0B0B10ff;
-    height: 15%;
+    height: 18%;
     opacity: 0.8;
     width: 100%;
+    margin-top: 0px;
+    /* position: absolute; */
 }
 
 .overview {
@@ -83,4 +88,5 @@ footer {
     font-weight: bold;
     font-size: 25px;
     padding: 20px;
+    margin-top: 0px;
 }
