@@ -24,7 +24,6 @@
     }
 }
     
-
 @media screen and (max-width: 60em) {
     .wrapper {
         grid-template-columns: repeat(3, 1fr);

@@ -1,26 +1,33 @@
 .card {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     font-family: 'Rajdhani', sans-serif;
+    justify-content: center;
 }
 
 .card:hover {
+    animation: pop 0.3s linear 1;
     cursor:pointer;
-
+    display:inline-block;
+    margin:0.4em;  padding:1em;
+    transform: scale(1);
+    transition: all .75s ease-in-out;
 }
 
 .poster {
     height: 80%;
     width: 100%;
-
 }
 
 .posterImage {
     border: 1px solid #9FA0A4;
     height: 100%;
     width: 100%;
+}
+
+.posterImage:hover{
+    border: 3px solid #FFCA0Eff;
 }
 
 .allTitles{

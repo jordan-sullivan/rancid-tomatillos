@@ -10,7 +10,6 @@
     z-index: 0;
 }
 
-
 .posterTitleContainer {
     display: flex;
     height: 80%;
@@ -30,11 +29,12 @@
     justify-content: center;
     max-width: 300px;
     margin-right: 5%;
-    /* margin-top: 10px; */
-    margin-bottom: 2%;
+    margin-top: 4%;
+    margin-bottom: 3%;
     min-width: 300px;
     opacity: 0.8;
-    padding: 20px 15px 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
     text-align: center;
     width: 30%;
 }
@@ -60,7 +60,6 @@ p {
 }
 
 .genresHolder {
-    border: 2px solid white;
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -68,6 +67,7 @@ p {
 
 .genres {
     padding: 5px;
+    color: #41AAD1;
 }
 
 footer {
