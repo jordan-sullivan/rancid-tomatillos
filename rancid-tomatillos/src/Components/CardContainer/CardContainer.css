@@ -1,11 +1,10 @@
 .wrapper {
     width:100vw;
-    height: 100%;
+    height: 90%;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap:1%;
     row-gap:2%;
-    /* grid-auto-rows: 10%; */
     background-color:#0B0B10ff;
     color:azure;
     overflow-y: scroll;

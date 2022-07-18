@@ -2,8 +2,17 @@
     text-decoration: none;
 }
 
+html {
+    height: 100%;
+    background-image: linear-gradient(
+      to bottom right,
+      rgb(0, 0, 0),
+      rgb(0, 0, 0)
+    );
+  }
+
+
 .error {
     border: solid 1px black
 }
-
 

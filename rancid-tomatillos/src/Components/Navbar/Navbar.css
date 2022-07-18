@@ -70,7 +70,7 @@ svg {
 button span {
     color: #D6D6D6;
     font-family: 'Bebas Neue', cursive;
-    font-size: 18px;
+    font-size: 23px;
     font-weight: 100;
 }
 
@@ -81,4 +81,10 @@ button:hover {
 
 button:hover svg {
     stroke-dashoffset: -480;
+}
+
+@media screen and (max-width: 50em) {
+    h1 {
+        font-size: 50px;
+    }
 }
