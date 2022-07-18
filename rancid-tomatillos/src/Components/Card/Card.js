@@ -5,7 +5,7 @@ const Card = ({key, id, poster, rating, title, handleClick}) => {
     return (
         <div className="card" role="button" onClick={() => handleClick(id)}>
             <div className="poster">
-                <img class="posterImage" src={poster}/>
+                <img class="posterImage" alt={`poster image from ${title}`} src={poster}/>
             </div>
             <div className="cardDescription">
                 <p className="allTitles">{title}</p>

@@ -48,7 +48,7 @@ class MovieView extends Component{
         return(
             <div className="movieViewError">
             <div style={{display: this.state.error ? "block" : "none"}}> {this.state.error} </div>
-            <div className="movieViewMain" src={film.backdrop_path} style={{ backgroundImage: `url(${film.backdrop_path})` }}>
+                <div className="movieViewMain" src={film.backdrop_path} alt={`scene image from ${film.title}`} style={{ backgroundImage: `url(${film.backdrop_path})` }}>
                 <div className="posterTitleContainer">
                         <div className="statsContainer">
                             <h2 className="title">{film.title}</h2>
