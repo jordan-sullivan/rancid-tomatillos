@@ -1,6 +1,6 @@
 # Rancid Tomatillos : Movie Viewer
 
-For this project, the goal of was to create a React application that allows users to browse through a collection of movies and see what peaks their interest. They may also sort movies from best to worst by rating, and vise versa with the click of a button. Users can click on a specific movie from the home page and the movie's details will render to a second page. The user can use the functional back arrow or click the Home button to return to the home page. 
+For this project, the goal of was to create a React application that allows users to browse through a collection of movies and see what peaks their interest. They may also sort movies from best to worst by rating, and vice versa with the click of a button. Users can click on a specific movie from the home page and the movie's details will render to a second page. The user can use the functional back arrow or click the Home button to return to the home page. 
 
 ### Table of Contents
 - [Project Specs](#project-specs)
@@ -14,7 +14,7 @@ For this project, the goal of was to create a React application that allows user
 
 ## Project Specs
 
-Travel Tracker is a React application that uses React Router built in 8 days at the [Turing School of Software and Design](https://turing.edu/). The goal of this paired [project](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html) was to solidify and demonstrate the understanding of:
+Rancid Tomatillos is a React application that uses React Router built in 8 days at the [Turing School of Software and Design](https://turing.edu/). The goal of this paired [project](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html) was to solidify and demonstrate the understanding of:
 
 - React fundamentals
 - Test React components & asynchronous JS using Cypress
@@ -23,17 +23,17 @@ Travel Tracker is a React application that uses React Router built in 8 days at 
 
 ## Illustrations
 
-###View All Movies
+### View All Movies & Sort by Rating
 A user may browse a collection of movies on the main page
-![Rancid Tomatillos home-page gif](https://media.giphy.com/media/qiRG9s09xkBWpPQgyE/giphy.gif)
 
-###Sort Movie by its Rating
-When a user clicks on the sort by Rating button, they can view movie ratings from lowest to highest and vise versa
-![Rancid Tomatillos movie-view gif](https://media.giphy.com/media/qiRG9s09xkBWpPQgyE/giphy.gif)
+When a user clicks on the Sort by Rating button, they can view movie ratings from lowest to highest and vice versa
 
-###Display Specific Movie details
-When a user clicks on a specific movie ,they will be routed to another page to view movie's details
-![Rancid Tomatillos movie-view gif](https://media.giphy.com/media/qiRG9s09xkBWpPQgyE/giphy.gif)
+![Rancid Tomatillos home-page gif](https://media.giphy.com/media/jX6LN52LF89CturCJS/giphy.gif)
+
+### Display Specific Movie Details
+When a user clicks on a specific movie, they will be routed to another page to view movie's details
+
+![Rancid Tomatillos movie-view gif](https://media.giphy.com/media/t6xkInpM0C1jphhcvT/giphy.gif)
 
 **[Back to top](#table-of-contents)**
 
@@ -62,7 +62,7 @@ When a user clicks on a specific movie ,they will be routed to another page to v
 - Add search bar or dropdown to have ability to search a movie by its Title
 - Allow a user to search movies by genres on the main page 
 - Ability for a user to add their own rating to a movie
-- Responsive design to allow for better UX/UI
+- Responsive design to allow for better UX/UI on mobile devices
 
 
 ## Contributors
