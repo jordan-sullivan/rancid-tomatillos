@@ -10,12 +10,12 @@ function Navbar(props) {
             <Route
                 exact path="/"
                 render= {() =>
-                    <div class="button-container">
-                        <div class="center">
+                    <div className="button-container">
+                        <div className="center">
                             <button className="btn" onClick={props.sortByRating}>
-                                <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-                                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-                                    <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                                <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
+                                    <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+                                    <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
                                 </svg>
                                 <span>SORT BY RATING</span>
                             </button>
@@ -27,13 +27,13 @@ function Navbar(props) {
             <Route
                 exact path="/:id"
                     render= {() => 
-                    <div class="button-container">
-                        <div class="center">
+                    <div className="button-container">
+                        <div className="center">
                             <Link to="/">
                                 <button className="btn">
-                                    <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
-                                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
-                                        <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                                    <svg width="180px" height="60px" viewBox="0 0 180 60" className="border">
+                                        <polyline points="179,1 179,59 1,59 1,1 179,1" className="bg-line" />
+                                        <polyline points="179,1 179,59 1,59 1,1 179,1" className="hl-line" />
                                     </svg>
                                     <span>HOME</span>
                                 </button>
