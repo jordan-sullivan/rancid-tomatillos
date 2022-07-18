@@ -1,11 +1,11 @@
 .movieViewMain {
-    width:100vw;
     height: 90vh;
     background-size: cover;
     background-repeat: none;
     font-family: 'Rajdhani', sans-serif;
     overflow-y: scroll;
     overflow-x: hidden;
+    width:100vw;
     z-index: 0;
 }
 
@@ -43,8 +43,6 @@
     font-size: 40px;
     font-weight: bold;
     margin: 0%;
-    margin-bottom: ;
-
 }
 
 .tagline {
@@ -74,18 +72,18 @@ p {
 }
 
 .genres {
-    padding: 5px;
     color: #41AAD1;
+    padding: 5px;
 }
 
 footer {
-    color: antiquewhite;
     background-color: #0B0B10ff;
+    color: antiquewhite;
     height: 29%;
-    opacity: 0.8;
-    width: 100%;
     margin-top: 0px;
+    opacity: 0.8;
     text-align:center;
+    width: 100%;
 }
 
 .overview {
