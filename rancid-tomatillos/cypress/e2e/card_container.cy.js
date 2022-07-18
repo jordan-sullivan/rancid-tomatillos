@@ -10,6 +10,13 @@ describe("CardContainer Test Suite", () => {
       .visit("http://localhost:3000/")
       .contains("There was an error loading your films. Please try again!")
   })
+
+  it("should be able to display an error message for a 400 status code", () => {
+    cy
+      .intercept("GET", "https://rancid-tomatillos.herokuapp.com/api/v2/movies", { statusCode: 500 })
+      .visit("http://localhost:3000/")
+      .contains("There was an error loading your films. Please try again!")
+  })
   
   it("should be able to visit the app and display the Navbar", () => {
     cy
