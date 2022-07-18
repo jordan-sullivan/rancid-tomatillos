@@ -13,7 +13,7 @@ class MovieView extends Component{
 
     formatDate() {
         let testRelease = this.state.selectedMovieInfo.release_date
-        return `Released: ${new Date(testRelease).toLocaleString().split(' ')[0]}`
+        return `Released: ${new Date(testRelease).toLocaleString().split(',')[0]}`
     }
 
     formatGenres() {
@@ -29,8 +29,12 @@ class MovieView extends Component{
     formatRuntime() {
         let testRuntime = this.state.selectedMovieInfo.runtime
         let hoursAndMins = (testRuntime/60).toFixed(2).split('.');
+        if (hoursAndMins[0] >1){
+            return `${hoursAndMins[0]} hours and ${(hoursAndMins[1] * .60).toFixed(0)} minutes`
+        } else {
         return `${hoursAndMins[0]} hour and ${(hoursAndMins[1] * .60).toFixed(0)} minutes`
     }
+}
 
     componentDidMount() {
         fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.id}`)
@@ -48,7 +52,7 @@ class MovieView extends Component{
         return(
             <div className="movieViewError">
             <div style={{display: this.state.error ? "block" : "none"}}> {this.state.error} </div>
-            <div className="movieViewMain" src={film.backdrop_path} style={{ backgroundImage: `url(${film.backdrop_path})` }}>
+                <div className="movieViewMain" src={film.backdrop_path} alt={`scene image from ${film.title}`} style={{ backgroundImage: `url(${film.backdrop_path})` }}>
                 <div className="posterTitleContainer">
                         <div className="statsContainer">
                             <h2 className="title">{film.title}</h2>

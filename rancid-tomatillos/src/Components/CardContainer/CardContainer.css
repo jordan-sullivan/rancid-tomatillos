@@ -1,15 +1,15 @@
 .wrapper {
-    width:100vw;
-    height: 90%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    column-gap:1%;
-    row-gap:2%;
     background-color:#0B0B10ff;
     color:azure;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    column-gap:1%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    height: 90%;
     justify-content: center;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    row-gap:2%;
+    width:100vw;
 }
 
 @media screen and (max-width: 100em) {
