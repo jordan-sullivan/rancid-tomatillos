@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Rajdhani', sans-serif;
+    border: solid 3px purple;
 }
 
 .card:hover {
@@ -13,7 +14,8 @@
 
 .poster {
     height: 80%;
-    width:100%;
+    width: 100%;
+
 }
 
 .posterImage {
